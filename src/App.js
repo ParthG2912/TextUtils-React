@@ -4,7 +4,7 @@ import Alert from './components/Alert';
 import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
-import { BrowserRouter as Router, Switch, Route, Link, useRouteMatch, useParams } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
     const [mode, setMode] = useState('light');
@@ -48,10 +48,15 @@ function App() {
                 <div className="container my-3">
                     <Switch>
                         <Route exact path="/about">
-                            <About />
+                            <About mode={mode} />
                         </Route>
                         <Route exact path="/">
-                            <TextForm showAlert={showAlert} heading="Enter the text below to Analyze" mode={mode} />
+                            <TextForm
+                                showAlert={showAlert}
+                                // heading="Enter the text below to Analyze"
+                                heading="Try TextUtils - Word counter, Character counter, Remove extra spaces"
+                                mode={mode}
+                            />
                         </Route>
                     </Switch>
                 </div>
