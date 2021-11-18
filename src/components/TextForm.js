@@ -59,23 +59,26 @@ export default function TextForm(props) {
                             color: props.mode === "dark" ? "white" : "black",
                         }}
                         id="myBox"
-                        rows="8"></textarea>
+                        rows="8"
+                    ></textarea>
                 </div>
-                <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>
-                    Convert to Uppercase
-                </button>
-                <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleLoClick}>
-                    Convert to Lowercase
-                </button>
-                <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleClearClick}>
-                    Clear Text
-                </button>
-                <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleCopy}>
-                    Copy Text
-                </button>
-                <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleExtraSpace}>
-                    Remove Extra Spaces
-                </button>
+                <div class="d-grid gap-2 d-md-block">
+                    <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>
+                        Convert to Uppercase
+                    </button>
+                    <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleLoClick}>
+                        Convert to Lowercase
+                    </button>
+                    <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleClearClick}>
+                        Clear Text
+                    </button>
+                    <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleCopy}>
+                        Copy Text
+                    </button>
+                    <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleExtraSpace}>
+                        Remove Extra Spaces
+                    </button>
+                </div>
             </div>
             <div className={`container my-3 text-${props.mode === "light" ? "dark" : "light"}`}>
                 <h2>Your Text Summary</h2>
